@@ -7,13 +7,17 @@
 #   all-features: false
 #   with-sources: false
 #   generate-hashes: false
-#   universal: false
+#   universal: true
 
 -e file:.
-appnope==0.1.4
+appnope==0.1.4 ; platform_system == 'Darwin'
     # via ipykernel
 asttokens==2.4.1
     # via stack-data
+cffi==1.17.1 ; implementation_name == 'pypy'
+    # via pyzmq
+colorama==0.4.6 ; sys_platform == 'win32'
+    # via ipython
 comm==0.2.2
     # via ipykernel
 debugpy==1.8.6
@@ -42,7 +46,7 @@ packaging==24.1
     # via ipykernel
 parso==0.8.4
     # via jedi
-pexpect==4.9.0
+pexpect==4.9.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
     # via ipython
 platformdirs==4.3.6
     # via jupyter-core
@@ -50,14 +54,18 @@ prompt-toolkit==3.0.48
     # via ipython
 psutil==6.0.0
     # via ipykernel
-ptyprocess==0.7.0
+ptyprocess==0.7.0 ; sys_platform != 'emscripten' and sys_platform != 'win32'
     # via pexpect
 pure-eval==0.2.3
     # via stack-data
+pycparser==2.22 ; implementation_name == 'pypy'
+    # via cffi
 pygments==2.18.0
     # via ipython
 python-dateutil==2.9.0.post0
     # via jupyter-client
+pywin32==308 ; platform_python_implementation != 'PyPy' and sys_platform == 'win32'
+    # via jupyter-core
 pyzmq==26.2.0
     # via ipykernel
     # via jupyter-client

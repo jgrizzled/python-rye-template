@@ -4,7 +4,7 @@ version = "0.1.0"
 dependencies = [
     "ipykernel>=6.29.5",
 ]
-requires-python = ">= 3.12"
+requires-python = ">= 3.13"
 
 [project.scripts]
 example = "example_module.foo:foo"
@@ -20,7 +20,10 @@ test = "pytest src"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "pytest>=8.3.4",
+]
+universal = true
 
 [tool.ruff]
 extend-include = ["*.ipynb"]
